@@ -19,7 +19,7 @@ export default function App() {
       // 1. Local Image Processing
       let imageBuffer = null;
       try {
-        const response = await fetch('/logoatws.png');
+        const response = await fetch(import.meta.env.BASE_URL + 'logoatws.png');
         if (response.ok) {
            imageBuffer = await response.arrayBuffer();
         }
@@ -129,7 +129,7 @@ export default function App() {
         {/* Header */}
         <div className="text-center mb-8">
           <div className="w-44 h-auto flex items-center justify-center mx-auto mb-8">
-            <img src="/logoatws.png" alt="ATW Solar"/>
+            <img src={`${import.meta.env.BASE_URL}logoatws.png`} alt="ATW Solar"/>
           </div>
           <h1 className="text-3xl font-extrabold text-slate-800 tracking-tight">DC Schedule</h1>
           <p className="text-slate-500 mt-2 font-medium">Upload Excel, Dapatkan Optimasi Kabel</p>
